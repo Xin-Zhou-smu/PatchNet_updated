@@ -24,6 +24,7 @@ After downloading, simply copy the data and model folders to PatchNet folder.
 
 ## Generate Data .pkl from .out files:
 please modify the paths(input and output) and run text2dict.py to generate train.pkl and test.pkl.
+
 please modify the paths(input and output) and run generate_dict.py to generate dict.pkl.
 
 ## Hyperparameters:
