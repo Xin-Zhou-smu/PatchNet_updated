@@ -34,7 +34,6 @@ if __name__ == "__main__":
     
     #read commits and change format into dict
     commits_ = extract_commit(path_file=path_input_data)
-    nfile, nhunk, nloc, nleng = 2, 5, 10, 120
     #print(commits_[0])
     
     # store dict data
@@ -43,6 +42,7 @@ if __name__ == "__main__":
    
     # print out the generated data
     if (show_data == True):
+        print("The first two commits are shown below: ")
         f = open(path_output_data,'rb')
         data = pickle.load(f)
         print(data[0:2])
