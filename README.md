@@ -28,14 +28,14 @@ please modify the paths(input and output) and run text2dict.py to generate train
       $ python text2dict.py -text_path  [path of text data] -dict_path [path of the dictionary data want to store]  -print True
    Example:
       
-      $ python text2dict.py -text_path  'train_data.out' -dict_path './data/train.pkl' -print True
+      $ python text2dict.py -text_path  'train_data.out' -dict_path 'train.pkl' 
       
 please modify the paths(input and output) and run generate_dict.py to generate dict.pkl.
 
       $ python generate_dict.py -text_path1 [path of our data1] -text_path2 [path of our data2] -dict_path [path we want to store dict.pkl]
    Example:
     
-      $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'test_data.out' -dict_path './data/dict.pkl'
+      $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'test_data.out' -dict_path 'dict.pkl'
 
 ## Hyperparameters:
 We have a number of different parameters
