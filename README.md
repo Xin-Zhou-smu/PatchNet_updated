@@ -22,6 +22,10 @@ Please following the link below to download the data and pretrained models of ou
 
 After downloading, simply copy the data and model folders to PatchNet folder. 
 
+## Generate Data from .out files:
+please modify the paths(input and output) and run text2dict.py to generate train.pkl and test.pkl
+please modify the paths(input and output) and run generate_dict.py to generate dict.pkl
+
 ## Hyperparameters:
 We have a number of different parameters
 
