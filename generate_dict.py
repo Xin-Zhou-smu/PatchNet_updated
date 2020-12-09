@@ -47,9 +47,9 @@ if __name__ == '__main__':
     #print (msgs[1])
     #print(len(codes))
     #print(codes[1])
-    
-    print(len(dict_msg))
-    print(len(dict_code))
+    print("the number of different tokens in message part is : {n}".format(n=len(dict_msg)))
+    print("the number of different tokens in code part is : {n}".format(n=len(dict_code)))
+   
 
     dict_whole = (dict_msg, dict_code)
     with open(path_output_data, 'wb') as handle:
