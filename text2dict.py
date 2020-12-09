@@ -14,9 +14,7 @@ from preprocessing import extract_commit
 import pickle
 
 def read_args():
-    
     parser = argparse.ArgumentParser()
-    
     parser.add_argument('-text_path', type=str, help='the directory of text data')
     parser.add_argument('-dict_path', type=str, help='the path the generated data want to save')
     parser.add_argument('-print', type=bool,default = False, help='whether to print some example of generated data')
