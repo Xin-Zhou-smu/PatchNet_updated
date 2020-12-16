@@ -42,7 +42,11 @@ please modify the paths(input and output) and run generate_dict.py to generate d
    
    test_data.out is the "text format" patches as test dataset (used in evaluation phase).
    
-   The reason why we need evaluation data (test_data.out) is that if we only build a dictionary based on training dataset (training_data.out), there may be some words in test_data.out which never apprear in training_data.out. In this case, the generated dict.pkl is not the whole vacabulary. Considering it, I put both training data and test data to generate dict.pkl. As dict.pkl are consist of only token-id pairs, using test data will not affect the evaluation phase (no test info leak to model).
+   The reason why we need evaluation data (test_data.out) is that if we only build a dictionary based on training dataset (training_data.out), there may be some words in test_data.out which never appear in training_data.out. In this case, the generated "dict.pkl" is not the whole vacabulary. Considering it, I put both training data and test data to generate dict.pkl. As dict.pkl is consist of only token-id pairs, using test data will not affect the evaluation phase (no test info leak to model).
+   
+   If we don't want use test data in generating dict.pkl, we can change the command into this, to only allow training data:
+   $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'training_data.out' -dict_path 'dict.pkl'
+   
 
 ## Hyperparameters:
 We have a number of different parameters
