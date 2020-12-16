@@ -37,6 +37,10 @@ please modify the paths(input and output) and run generate_dict.py to generate d
    Example:
     
       $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'test_data.out' -dict_path 'dict.pkl'
+   Notes:
+   training_data.out is the "text format" patches as training dataset (used in trainig phase).
+   test_data.out is the "text format" patches as test dataset (used in evaluation phase).
+   The reason why we need evaluation data (test_data.out) is that if we only build a dictionary based on training dataset (training_data.out), there may be some words in test_data.out which never apprear in training_data.out. In this case, the generated dict.pkl is not the whole vacabulary. Considering it, I put both training data and test data to generate dict.pkl. As dict.pkl are consist of only token-id pairs, using test data will not affect the evaluation phase (no test info leak to model).
 
 ## Hyperparameters:
 We have a number of different parameters
