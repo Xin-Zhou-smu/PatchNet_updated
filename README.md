@@ -76,11 +76,14 @@ We have a number of different parameters
        $ python main.py -predict -pred_data [path of our data] -dictionary_data [path of our dictionary data] -load_model [path of our model]
   For example:     
   
-       $ python main.py -predict -pred_data 'test.pkl' -dictionary_data 'dict.pkl' -load_model './snapshot/*.pt'
+       $ python main.py -predict -pred_data 'test.pkl' -dictionary_data 'dict.pkl' -load_model './snapshot/2020-12-01_07-45-03/epoch_20.pt'
   Notes:
-    "-load_model"  parameter needs the path to saved model. In the traininf phase, PatchNet will save some intermediate models during the process, which are stroed in folder "snapshot".
+    "-load_model"  parameter needs the path to saved model. In the training phase, PatchNet will automatically save some intermediate models during the process, which are stroed in folder "snapshot". In the "snapshot" folder, there are folders named by "year-month-day-hour-minute-second", to represent the time when models are stored.
     
-    In the "snapshot" folder, the model files are named ""
+     In each, "year-month-day-hour-minute-second" folder, there are many intermediate model files are named "epoch_x.pt". "epoch_20.pt" means the model are saved after training 20 epochs.
+     
+     We need to load these stored models when doing evaluation. If we load "epocj_20.pt" and do evaluation, that means we only evaluate the performance of the model "epoch_20.pt" (model saved at 20th epoch).
+     
 
 ## Contact
 
