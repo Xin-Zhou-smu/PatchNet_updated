@@ -44,8 +44,9 @@ please modify the paths(input and output) and run generate_dict.py to generate d
    
    The reason why we need evaluation data (test_data.out) is that if we only build a dictionary based on training dataset (training_data.out), there may be some words in test_data.out which never appear in training_data.out. In this case, the generated "dict.pkl" is not the whole vacabulary. Considering it, I put both training data and test data to generate dict.pkl. As dict.pkl is consist of only token-id pairs, using test data will not affect the evaluation phase (no test info leak to model).
    
-   If we don't want use test data in generating dict.pkl, we can change the command into this, to only allow training data:
-   $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'training_data.out' -dict_path 'dict.pkl'
+   If we don't want use test data in generating dict.pkl, we can change the command into this, to only use training data:
+   
+     $ python generate_dict.py -text_path1 'training_data.out' -text_path2 'training_data.out' -dict_path 'dict.pkl'
    
 
 ## Hyperparameters:
@@ -76,6 +77,10 @@ We have a number of different parameters
   For example:     
   
        $ python main.py -predict -pred_data 'test.pkl' -dictionary_data 'dict.pkl' -load_model './snapshot/*.pt'
+  Notes:
+    "-load_model"  parameter needs the path to saved model. In the traininf phase, PatchNet will save some intermediate models during the process, which are stroed in folder "snapshot".
+    
+    In the "snapshot" folder, the model files are named ""
 
 ## Contact
 
