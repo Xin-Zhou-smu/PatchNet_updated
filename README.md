@@ -28,7 +28,8 @@ please modify the paths(input and output) and run text2dict.py to generate train
       $ python text2dict.py -text_path  [path of text data] -dict_path [path of the dictionary data want to store]  -print True
    Example:
       
-      $ python text2dict.py -text_path  'train_data.out' -dict_path 'train.pkl' 
+      $ python text2dict.py -text_path  'train_data.out' -dict_path 'train.pkl'  
+      $ python text2dict.py -text_path  'test_data.out' -dict_path 'test.pkl' 
       
 please modify the paths(input and output) and run generate_dict.py to generate dict.pkl.
 
@@ -55,10 +56,16 @@ We have a number of different parameters
 - To train the model for bug fixing patch classification, please follow this command: 
 
       $ python main.py -train -train_data [path of our data] -dictionary_data [path of our dictionary data]
-      
+  For example:
+       
+      $ python main.py -train -train_data 'train.pkl' -dictionary_data 'dict.pkl'
+     
 - To evaluate the model for bug fixing patch classification, please follow this command:
       
        $ python main.py -predict -pred_data [path of our data] -dictionary_data [path of our dictionary data] -load_model [path of our model]
+  For example:     
+  
+       $ python main.py -predict -pred_data 'test.pkl' -dictionary_data 'dict.pkl' -load_model './snapshot/*.pt'
 
 ## Contact
 
