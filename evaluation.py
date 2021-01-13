@@ -40,7 +40,23 @@ def running_evaluation(model, data):
         prc = precision_score(y_true=groundtruth, y_pred=binary_pred)        
         rc = recall_score(y_true=groundtruth, y_pred=binary_pred)
         f1 = f1_score(y_true=groundtruth, y_pred=binary_pred)
-        auc_score = roc_auc_score(groundtruth, predicts)
+        
+        #deal with exception case
+        if (list(groundtruth).count(1) == len(groundtruth)):
+            auc_score = -1
+            print('\n')
+            print('----------------------------------------------------------------------------')
+            print('Cannot compute AUC score because we only have positive samples in test set !')
+            print('----------------------------------------------------------------------------')
+        elif (list(groundtruth).count(0) == len(groundtruth)):
+            auc_score = -1
+            print('\n')
+            print('---------------------------------------------------------------------------')
+            print('Cannot compute AUC score because we only have negative samples in test set !')
+            print('---------------------------------------------------------------------------')
+        else:
+            auc_score = roc_auc_score(groundtruth, predicts)
+           
         return accuracy, auc_score, prc, rc, f1
 
 
