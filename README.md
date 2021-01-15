@@ -1,5 +1,8 @@
 # PatchNet: Hierarchical Deep Learning-Based Stable Patch Identification for the Linux Kernel [[pdf](https://arxiv.org/pdf/1911.03576.pdf)]
 
+Attention: here is the new version of PatchNet: https://github.com/Xin-Zhou-smu/PatchNet 
+please refer to the new version to get more details.
+
 ## Contact
 Questions and discussion are welcome: vdthoang.2016@smu.edu.sg
 
